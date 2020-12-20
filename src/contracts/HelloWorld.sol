@@ -6,14 +6,14 @@ contract HelloWorld {
     MessageList[] public savedMessages;
 
     struct MessageList {
-        uint id;
+
         address messenger;
         string message;
     }
 
     function setMessage(string memory newMessage) public {
         message = newMessage;
-        savedMessages.push(MessageList(savedMessages.length, msg.sender, message));
+        savedMessages.push(MessageList( msg.sender, message));
        
     }
 
